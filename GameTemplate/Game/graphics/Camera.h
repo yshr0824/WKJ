@@ -24,6 +24,17 @@ public:
 	{
 		return m_projMatrix;
 	}
+	//ビュー行列の逆行列を取得
+	CMatrix GetViewMatrixInv()
+	{
+		return m_viewMatrixInv;
+	}
+	
+	//カメラの回転行列を取得。
+	CMatrix& GetCameraRotation()
+	{
+		return m_cameraRotation;
+	}
 	/*!
 	 * @brief	視点を取得。
 	 */
@@ -66,6 +77,15 @@ public:
 	{
 		m_up = up;
 	}
+	//カメラの前方向
+	const CVector3& GetForward() 
+	{
+		return m_forward;
+	}
+	const CVector3& GetRight()
+	{
+		return m_right;
+	}
 	/*!
 	 * @brief	遠平面を設定。
 	 */
@@ -90,9 +110,14 @@ public:
 private:
 	CMatrix	m_viewMatrix = CMatrix::Identity();		//ビュー行列。
 	CMatrix m_projMatrix = CMatrix::Identity();		//プロジェクション行列。
+	CMatrix m_viewMatrixInv = CMatrix::Identity();	//ビュー行列の逆行列
+	CMatrix	m_cameraRotation = CMatrix::Identity();	//カメラの回転行列。
 	CVector3 m_target = CVector3::Zero();			//注視点。
 	CVector3 m_position = CVector3::Zero();			//視点。
+	
 	CVector3 m_up = CVector3::Up();					//上方向。
+	CVector3 m_forward = CVector3::Front();         //前方向
+	CVector3 m_right = CVector3::Right();			//右方向
 	float m_viewAngle = CMath::DegToRad(60.0f);		//画角。
 	float m_far = 10000.0f;							//遠い平面までの距離。
 	float m_near = 1.0f;							//近平面までの距離。

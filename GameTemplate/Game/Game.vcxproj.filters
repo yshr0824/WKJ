@@ -108,6 +108,12 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="IGameObject.cpp" />
+    <ClCompile Include="GameObjectManager.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="GameCamera.cpp" />
+    <ClCompile Include="Asiba.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="math\Vector.h">
@@ -193,10 +199,21 @@
     </ClInclude>
     <ClInclude Include="Player.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="IGameObject.h" />
+    <ClInclude Include="GameObjectManager.h" />
+    <ClInclude Include="Noncopyable.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Stage.h" />
+    <ClInclude Include="GameCamera.h" />
+    <ClInclude Include="Asiba.h" />
   </ItemGroup>
   <ItemGroup>
     <MeshContentTask Include="Assets\modelData\unityChan.fbx">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\haikei.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\asiba.FBX" />
   </ItemGroup>
 </Project>

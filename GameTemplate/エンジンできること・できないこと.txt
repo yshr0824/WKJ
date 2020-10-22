@@ -17,7 +17,7 @@
 　 2Dも出せない
 　 文字も出せない
 　 GameObjectManegerもない
-	NewGO、DeleteGO、FindGO
+	・NewGO、DeleteGO、FindGO　
 
 ゲーム大賞
 　6/29からスタート

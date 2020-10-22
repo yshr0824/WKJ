@@ -99,7 +99,11 @@
     </MeshContentTask>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Asiba.cpp" />
     <ClCompile Include="character\CharacterController.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameCamera.cpp" />
+    <ClCompile Include="GameObjectManager.cpp" />
     <ClCompile Include="graphics\animation\Animation.cpp" />
     <ClCompile Include="graphics\animation\AnimationClip.cpp" />
     <ClCompile Include="graphics\animation\AnimationPlayController.cpp" />
@@ -112,6 +116,7 @@
     <ClCompile Include="graphics\SkinModelDataManager.cpp" />
     <ClCompile Include="graphics\SkinModelEffect.cpp" />
     <ClCompile Include="HID\Pad.cpp" />
+    <ClCompile Include="IGameObject.cpp" />
     <ClCompile Include="level\Level.cpp" />
     <ClCompile Include="level\MapChip.cpp" />
     <ClCompile Include="main.cpp" />
@@ -124,6 +129,7 @@
     <ClCompile Include="physics\CapsuleCollider.cpp" />
     <ClCompile Include="physics\PhysicsStaticObject.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Stage.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
@@ -131,7 +137,11 @@
     <ClCompile Include="system\system.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Asiba.h" />
     <ClInclude Include="character\CharacterController.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameCamera.h" />
+    <ClInclude Include="GameObjectManager.h" />
     <ClInclude Include="graphics\animation\Animation.h" />
     <ClInclude Include="graphics\animation\AnimationClip.h" />
     <ClInclude Include="graphics\animation\AnimationPlayController.h" />
@@ -145,6 +155,7 @@
     <ClInclude Include="graphics\SkinModelEffect.h" />
     <ClInclude Include="graphics\SkinModelShaderConst.h" />
     <ClInclude Include="HID\Pad.h" />
+    <ClInclude Include="IGameObject.h" />
     <ClInclude Include="level\Level.h" />
     <ClInclude Include="level\MapChip.h" />
     <ClInclude Include="math\kMath.h" />
@@ -158,10 +169,14 @@
     <ClInclude Include="physics\CollisionAttr.h" />
     <ClInclude Include="physics\PhysicsStaticObject.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Stage.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="system\system.h" />
+    <ClInclude Include="Noncopyable.h" />
   </ItemGroup>
   <ItemGroup>
+    <MeshContentTask Include="Assets\modelData\asiba.FBX" />
+    <MeshContentTask Include="Assets\modelData\haikei.FBX" />
     <MeshContentTask Include="Assets\modelData\unityChan.fbx">
       <ContentOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)\Assets\modelData\%(Filename).cmo</ContentOutput>
       <ContentOutput Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)\Assets\modelData\%(Filename).cmo</ContentOutput>

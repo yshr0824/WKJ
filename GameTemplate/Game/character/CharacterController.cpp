@@ -140,6 +140,7 @@ const CVector3& CharacterController::Execute(float deltaTime, CVector3& moveSpee
 	//XZ平面での衝突検出と衝突解決を行う。
 	{
 		int loopCount = 0;
+			m_kabeHit = false;
 		while (true) {
 			//現在の座標から次の移動先へ向かうベクトルを求める。
 			CVector3 addPos;
@@ -170,10 +171,12 @@ const CVector3& CharacterController::Execute(float deltaTime, CVector3& moveSpee
 			//衝突検出。
 			g_physics.ConvexSweepTest((const btConvexShape*)m_collider.GetBody(), start, end, callback);
 
+
 			if (callback.isHit) {
+				m_kabeHit = true;
 				//当たった。
 				//壁。
-#if 1
+#if 0
 				//こちらを有効にすると衝突解決が衝突点に戻すになる。
 				nextPosition.x = callback.hitPos.x;
 				nextPosition.z = callback.hitPos.z;
@@ -189,7 +192,7 @@ const CVector3& CharacterController::Execute(float deltaTime, CVector3& moveSpee
 				CVector3 vMerikomi;
 				vMerikomi = vT0 - vT1;
 				//XZ平面での衝突した壁の法線を求める。。
-				CVector3 hitNormalXZ = callback.hitNormal;
+				hitNormalXZ = callback.hitNormal;
 				hitNormalXZ.y = 0.0f;
 				hitNormalXZ.Normalize();
 				//めり込みベクトルを壁の法線に射影する。

@@ -77,6 +77,14 @@ public:
 	{
 		return &m_rigidBody;
 	}
+	bool GetkabeHit()
+	{
+		return m_kabeHit;
+	}
+	CVector3 GethitNormalXZ()
+	{
+		return hitNormalXZ;
+	}
 	/*!
 	* @brief	剛体を物理エンジンから削除。。
 	*/
@@ -89,4 +97,6 @@ private:
 	float				m_radius = 0.0f;
 	float				m_height = 0.0f;		
 	RigidBody			m_rigidBody;					//剛体。
+	bool m_kabeHit = false; //壁に当たってるかどうか
+	CVector3 hitNormalXZ = CVector3::Zero();   //法線
 };
