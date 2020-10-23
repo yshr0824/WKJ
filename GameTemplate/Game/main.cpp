@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "system/system.h"
-#include "Player.h"
+#include "Player/Player.h"
 #include "Game.h"
 #include "level/Level.h"
 

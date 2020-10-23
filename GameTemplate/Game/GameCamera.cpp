@@ -36,14 +36,14 @@ void GameCamera::Update()
 	float y = g_pad->GetRStickYF();
 	//Y軸周りの回転
 	CQuaternion qRot;
-	qRot.SetRotationDeg(CVector3::AxisY(), 2.0f * x);
+	qRot.SetRotationDeg(CVector3::AxisY(), m_cameraRot * x);
 	qRot.Multiply(m_toCameraPos);
 	//X軸周りの回転
 	//X軸周りの回転。
 	CVector3 axisX;
 	axisX.Cross(CVector3::AxisY(), m_toCameraPos);
 	axisX.Normalize();
-	qRot.SetRotationDeg(axisX, 2.0f * y);
+	qRot.SetRotationDeg(axisX, m_cameraRot * y);
 	qRot.Multiply(m_toCameraPos);
 
 	//カメラの回転の上限をチェックする。
@@ -52,6 +52,7 @@ void GameCamera::Update()
 	//大きさが１になるということは、ベクトルから強さがなくなり、方向のみの情報となるということ。
 	CVector3 toPosDir = m_toCameraPos;
 	toPosDir.Normalize();
+	
 	if (toPosDir.y < -0.5f) {
 		//カメラが上向きすぎ。
 		m_toCameraPos = m_toCameraPosOld;

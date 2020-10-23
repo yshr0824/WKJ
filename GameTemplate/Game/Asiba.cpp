@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Asiba.h"
-#include "Player.h"
+#include "Player/Player.h"
 Asiba::Asiba()
 {
 }
