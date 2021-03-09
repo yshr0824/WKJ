@@ -20,19 +20,19 @@ public:
 	/// 
 	bool Start();
 	void Execute();
-	void SetmovePos(const CVector3& pos)
+	void SetMovePos(const CVector3& pos)
 	{
 		m_movePos = pos;
 	}
-	const CVector3& GetmovePos() const
+	const CVector3& GetMovePos() const
 	{
 		return m_movePos;
 	}
-	void SetmoveSp(const CVector3& sp)
+	void SetMoveSp(const CVector3& sp)
 	{
 		m_moveSp = sp;
 	}
-	const CVector3& GetmoveSp() const
+	const CVector3& GetMoveSp() const
 	{
 		return m_moveSp;
 	}

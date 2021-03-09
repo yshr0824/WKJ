@@ -14,7 +14,7 @@ public:
 	~Player();
 	bool Start();
 	void Update();
-	void Draw();		//描画。
+	void Draw(/*int renderMode*/);		//描画。
 	//void Move();		//移動処理。
 	//void Turn();		//回転処理。
 	//void Jump();		//ジャンプ。
@@ -46,8 +46,8 @@ public:
 	}
 	void Setasiba(const std::vector<Asiba*>& asiba)
 	{
-		for (Asiba* a : asiba) {
-			m_asibaVector.push_back(a);
+		for (Asiba* p : asiba) {
+			m_asibaVector.push_back(p);
 		}
 	}
 	const std::vector<Asiba*>& GetAsiba() const
@@ -63,10 +63,10 @@ private:
 	const float m_radius = 20.0f;						//キャラコンの半径。
 	const float m_high = 50.0f;							//キャラコンの高さ
 	CQuaternion m_rotation = CQuaternion::Identity();	//Playerの回転。
-	Animation m_animation;
-	AnimationClip m_animationCrip;
 	PlayerMove m_move;									//移動処理。
-	PlayerTurn m_playerturn;
+	PlayerTurn m_playerturn;							//旋回処理。
 	CharacterController m_charaCon;						//キャラコン。
+	int renderMode = 1;	//０なら通常描画、１ならシルエット描画。
+	int renderMode2 = 0;
 };
 

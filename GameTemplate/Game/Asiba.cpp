@@ -24,8 +24,9 @@ void Asiba::Update()
 
 void Asiba::Draw()
 {
-	m_model.Draw(
-		g_camera3D.GetViewMatrix(),
-		g_camera3D.GetProjectionMatrix()
-	);
+	//m_model.Draw(
+	//	g_camera3D.GetViewMatrix(),
+	//	g_camera3D.GetProjectionMatrix(),
+	//	renderMode
+	//);
 }

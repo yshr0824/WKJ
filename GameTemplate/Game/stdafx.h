@@ -13,6 +13,10 @@
 #include <functional>
 #include <algorithm>
 
+//Effekseerのヘッダーファイルをインクルード。
+#include "Effekseer.h"
+#include "EffekseerRendererDX11.h"
+
 #include "btBulletDynamicsCommon.h"
 #include "BulletCollision\CollisionDispatch\btGhostObject.h"
 

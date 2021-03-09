@@ -22,5 +22,5 @@ public:
 private:
 	SkinModel m_model;		//!<モデル。
 	PhysicsStaticObject m_physicsStaticObject;	//!<静的物理オブジェクト。
-	
+	int renderMode = 0;
 };

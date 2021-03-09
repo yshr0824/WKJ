@@ -2,8 +2,18 @@
 
 #include "IGameObject.h"
 #include "util/Util.h"
+#include "ShadowMap.h"
 
-
+/// <summary>
+/// ゲームオブジェクトの実行優先
+/// </summary>
+enum {
+	enGameObjectPrio_MostHight,	//最高。
+	enGameObjectPrio_High,		//高い。
+	enGameObjectPrio_Middle,	//中間
+	enGameObjectPrio_Low,		//低い。
+	enGameObjectPrio_MostLow,	//最低。
+};
 class GameObjectManager
 {
 private:
@@ -21,9 +31,15 @@ private:
 	}
 public:
 	/// <summary>
+	/// コンストラクタ。
+	/// </summary>
+	GameObjectManager();
+	/// <summary>
 	/// 実行。
 	/// </summary>
 	void Execute();
+	//初期化を明示的に呼ぶ
+	void Init();
 	/// <summary>
 	/// ゲームオブジェクトを追加。
 	/// </summary>
@@ -50,7 +66,14 @@ public:
 	//Deleto
 	void DeleteGameObject(IGameObject* go);
 	
-	
+	void RegistShadowCaster(SkinModel* shadowCaster)
+	{
+		m_shadowMap.RegistShadowCaster(shadowCaster);
+	}
+	ShadowMap* GetShadowMap()
+	{
+		return &m_shadowMap;
+	}
 	/// <summary>
 	/// ゲームオブジェクトを破棄。
 	/// </summary>
@@ -83,6 +106,7 @@ public:
 	}
 
 private:
+	ShadowMap m_shadowMap;	//シャドウマップ。
 	std::vector< IGameObject* > m_gameObjects;
 	typedef std::list<IGameObject*>	GameObjectList; //GameObjectListをList<IGameObject>のポイント型にする
 	std::vector<GameObjectList > m_gameObjectListArray; //ゲームオブジェクトのリスト

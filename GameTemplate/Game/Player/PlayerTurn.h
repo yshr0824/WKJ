@@ -7,19 +7,19 @@ class PlayerTurn
 public:
 	PlayerTurn(Player* pl);
 	void const Execute(const CVector3& sp);
-	void SetturnSp(const CVector3& pos)
+	void SetTurnSp(const CVector3& pos)
 	{
 		m_turnSpeed = pos;
 	}
-	const CVector3& GetturnSp() const
+	const CVector3& GetTurnSp() const
 	{
 		return m_turnSpeed;
 	}
-	void SetturnRot(const CQuaternion& rot)
+	void SetTurnRot(const CQuaternion& rot)
 	{
 		m_turnRotation = rot;
 	}
-	const CQuaternion& GetturnRot() const
+	const CQuaternion& GetTurnRot() const
 	{
 		return m_turnRotation;
 	}

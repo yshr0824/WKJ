@@ -10,22 +10,28 @@ protected:
 	std::wstring m_materialName;	//!<マテリアル名。
 	Shader* m_pVSShader = nullptr;
 	Shader* m_pPSShader = nullptr;
+	Shader* m_pPSSilhouette;
+	Shader m_psSilhouette;		//シルエット描画用のピクセルシェーダー。
+	Shader m_vsShadowMap;			//シャドウマップ生成用の頂点シェーダー。
+	Shader m_psShadowMap;		//シャドウマップ生成用のピクセルシェーダー。
 	Shader m_vsShader;
 	Shader m_psShader;
 	bool isSkining;
+	int m_renderMode = 0;
 	ID3D11ShaderResourceView* m_albedoTex = nullptr;
-
+	ID3D11DepthStencilState* m_silhouettoDepthStepsilState = nullptr;	//シルエット描画用のデプスステンシルステート。
+	
 public:
-	ModelEffect()
-	{
-		m_psShader.Load("Assets/shader/model.fx", "PSMain", Shader::EnType::PS);
-		
-		m_pPSShader = &m_psShader;
-	}
+	ModelEffect();
+	
 	virtual ~ModelEffect()
 	{
-		if (m_albedoTex) {
+		if (m_albedoTex ) {
 			m_albedoTex->Release();
+		}
+
+		if (m_silhouettoDepthStepsilState != nullptr) {
+			m_silhouettoDepthStepsilState->Release();
 		}
 	}
 	void __cdecl Apply(ID3D11DeviceContext* deviceContext) override;
@@ -49,6 +55,13 @@ public:
 		return wcscmp(name, m_materialName.c_str()) == 0;
 	}
 	
+	void SetRenderMode(int renderMode)
+	{
+		m_renderMode = renderMode;
+	}
+
+private:
+	void InitSilhouettoDepthStepsilState();
 };
 /*!
 *@brief
@@ -105,6 +118,7 @@ public:
 			ID3D11ShaderResourceView* texSRV;
 			DirectX::EffectFactory::CreateTexture(info.diffuseTexture, deviceContext, &texSRV);
 			effect->SetAlbedoTexture(texSRV);
+			//texSRV->Release();
 		}
 		return effect;
 	}

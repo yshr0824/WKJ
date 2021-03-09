@@ -5,8 +5,8 @@
 PlayerTurn::PlayerTurn(Player* pl) :
 	m_player(pl)
 {
-	SetturnSp(m_player->GetSpeed());
-	SetturnRot(m_player->GetRot());
+	SetTurnSp(m_player->GetSpeed());
+	SetTurnRot(m_player->GetRot());
 }
 
 void const PlayerTurn::Execute(const CVector3& sp) 

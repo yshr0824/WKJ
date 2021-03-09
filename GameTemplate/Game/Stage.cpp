@@ -9,7 +9,7 @@ Stage::Stage()
 	level.Init(a, [&](auto fuckModel) {
 		if (wcscmp(fuckModel.name, L"asiba") == 0)
 		{
-			m_asibaVector.push_back( NewGO<Asiba>(0, "asiba"));
+			m_asibaVector.push_back( NewGO<Asiba>(enGameObjectPrio_Middle, "asiba"));
 			m_asibaVector.back()->SetPos(fuckModel.position);
 			m_asibaVector.back()->SetRot(fuckModel.rotation);
 		}
@@ -18,6 +18,7 @@ Stage::Stage()
 		fuckModel.name;
 		return true;
 		});
+	
 }
 
 Stage::~Stage()
@@ -30,10 +31,13 @@ bool Stage::Start()
 	
 	m_model.Init(L"Assets/modelData/haikei.cmo");
 	
+	m_model.SetShadowReciever(true);
 
 	m_physicsStaticObject.CreateMeshObject(m_model, CVector3::Zero(), CQuaternion::Identity());
 	return true;
 }
+
+
 
 void Stage::Draw()
 {
@@ -41,6 +45,7 @@ void Stage::Draw()
 
 	m_model.Draw(
 		g_camera3D.GetViewMatrix(),
-		g_camera3D.GetProjectionMatrix()
+		g_camera3D.GetProjectionMatrix(),
+		renderMode
 	);
 }

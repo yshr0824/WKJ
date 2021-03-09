@@ -15,6 +15,7 @@ private:
 	std::vector<Asiba*> m_asibaVector;				//asibaの可変長配列
 	SkinModel m_model;
 	PhysicsStaticObject m_physicsStaticObject;		//静的物理オブジェクト
+	int renderMode = 0;
 };
 
 

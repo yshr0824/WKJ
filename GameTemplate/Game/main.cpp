@@ -11,8 +11,9 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
 {
 	//ゲームの初期化。
 	InitGame(hInstance, hPrevInstance, lpCmdLine, nCmdShow, "Game");
-	NewGO<Game>(0,"game");
+	NewGO<Game>(enGameObjectPrio_Middle,"game");
 	
+	IGameObjectManager().Init();
 	
 	//プレイヤー
 	//Player player;

@@ -1,7 +1,6 @@
 #pragma once
-/*!
- *@brief	グラフィックスエンジン。
- */
+
+
 class GraphicsEngine
 {
 public:

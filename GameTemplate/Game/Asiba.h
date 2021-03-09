@@ -27,5 +27,6 @@ private:
 	CVector3 m_scale = CVector3::One();
 	Player* m_player = nullptr;
 	SkinModel m_model;
+	int renderMode = 0;
 };
 

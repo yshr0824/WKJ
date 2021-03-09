@@ -13,8 +13,8 @@ PlayerMove::PlayerMove(Player* pl) :
 			m_high,			//‚‚³B
 			m_movePos		//‰ŠúˆÊ’uB
 		);
-		SetmovePos(m_player->GetPosition());
-		SetmoveSp(m_player->GetSpeed());
+		SetMovePos(m_player->GetPosition());
+		SetMoveSp(m_player->GetSpeed());
 	}
 }
 
