@@ -5,6 +5,7 @@
 
 #include "PlayerMove.h"
 #include "PlayerTurn.h"
+#include "AnimationController.h"
 class Asiba;
 //class PlayerMove;
 class Player: public IGameObject
@@ -65,6 +66,7 @@ private:
 	CQuaternion m_rotation = CQuaternion::Identity();	//Playerの回転。
 	PlayerMove m_move;									//移動処理。
 	PlayerTurn m_playerturn;							//旋回処理。
+	AnimationController* m_animation = nullptr;
 	CharacterController m_charaCon;						//キャラコン。
 	int renderMode = 1;	//０なら通常描画、１ならシルエット描画。
 	int renderMode2 = 0;

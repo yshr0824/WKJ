@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "system/system.h"
 #include "Player/Player.h"
+#include "AnimationController.h"
 #include "Game.h"
 #include "level/Level.h"
 

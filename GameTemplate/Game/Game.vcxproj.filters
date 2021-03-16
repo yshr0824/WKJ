@@ -223,6 +223,7 @@
     <ClInclude Include="AnimationController.h" />
     <ClInclude Include="RenderTarget.h" />
     <ClInclude Include="ShadowMap.h" />
+    <ClInclude Include="IPlayerState.h" />
   </ItemGroup>
   <ItemGroup>
     <MeshContentTask Include="Assets\modelData\unityChan.fbx">

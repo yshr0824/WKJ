@@ -162,6 +162,7 @@
     <ClInclude Include="graphics\SkinModelShaderConst.h" />
     <ClInclude Include="HID\Pad.h" />
     <ClInclude Include="IGameObject.h" />
+    <ClInclude Include="IPlayerState.h" />
     <ClInclude Include="level\Level.h" />
     <ClInclude Include="level\MapChip.h" />
     <ClInclude Include="math\kMath.h" />
