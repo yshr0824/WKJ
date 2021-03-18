@@ -99,7 +99,7 @@
     </MeshContentTask>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AnimationController.cpp" />
+    <ClCompile Include="AnimationController\AnimationController.cpp" />
     <ClCompile Include="Asiba.cpp" />
     <ClCompile Include="character\CharacterController.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -117,7 +117,9 @@
     <ClCompile Include="graphics\SkinModelDataManager.cpp" />
     <ClCompile Include="graphics\SkinModelEffect.cpp" />
     <ClCompile Include="HID\Pad.cpp" />
+    <ClCompile Include="AnimationController\IdleAnimation.cpp" />
     <ClCompile Include="IGameObject.cpp" />
+    <ClCompile Include="AnimationController\IPlayerState.cpp" />
     <ClCompile Include="level\Level.cpp" />
     <ClCompile Include="level\MapChip.cpp" />
     <ClCompile Include="main.cpp" />
@@ -140,9 +142,10 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="system\system.cpp" />
+    <ClCompile Include="AnimationController\WalkAnimation.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AnimationController.h" />
+    <ClInclude Include="AnimationController\AnimationController.h" />
     <ClInclude Include="Asiba.h" />
     <ClInclude Include="character\CharacterController.h" />
     <ClInclude Include="Game.h" />
@@ -161,8 +164,9 @@
     <ClInclude Include="graphics\SkinModelEffect.h" />
     <ClInclude Include="graphics\SkinModelShaderConst.h" />
     <ClInclude Include="HID\Pad.h" />
+    <ClInclude Include="AnimationController\IdleAnimation.h" />
     <ClInclude Include="IGameObject.h" />
-    <ClInclude Include="IPlayerState.h" />
+    <ClInclude Include="AnimationController\IPlayerState.h" />
     <ClInclude Include="level\Level.h" />
     <ClInclude Include="level\MapChip.h" />
     <ClInclude Include="math\kMath.h" />
@@ -184,6 +188,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="system\system.h" />
     <ClInclude Include="Noncopyable.h" />
+    <ClInclude Include="AnimationController\WalkAnimation.h" />
   </ItemGroup>
   <ItemGroup>
     <MeshContentTask Include="Assets\modelData\asiba.FBX" />

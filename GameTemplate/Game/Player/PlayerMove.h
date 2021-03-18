@@ -36,6 +36,11 @@ public:
 	{
 		return m_moveSp;
 	}
+	/*void SetCharaCon(const CharacterController& cc)
+	{
+		
+	}*/
+
 	friend class Player;
 private:
 	void Jump();

@@ -1,7 +1,9 @@
 #pragma once
 #include "graphics/animation/Animation.h"
 #include "graphics/animation/AnimationClip.h"
-#include "IPlayerState.h"
+
+//#include "IPlayerState.h"
+//#include "WalkAnimation.h"
 enum animNum {
 	animidle,
 	animwalk,
@@ -24,9 +26,13 @@ private:
 	SkinModel* m_model;
 	Animation m_animation;
 	AnimationClip m_animationCrip[4];
-	template<class T> void ChangeState();
-	IPlayerState* currentState;	//現在のステート。
-
+	bool m_isMove = false; //移動フラグ
+	bool m_isrun = false; //走りフラグ
+	bool m_isJump = false; //ジャンプフラグ
+//private:
+//	template<class T> void ChangeState();
+private:
+	//IPlayerState* currentState;	//現在のステート。
 };
 
 

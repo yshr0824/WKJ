@@ -121,9 +121,12 @@
     </ClCompile>
     <ClCompile Include="Player\PlayerMove.cpp" />
     <ClCompile Include="Player\PlayerTurn.cpp" />
-    <ClCompile Include="AnimationController.cpp" />
     <ClCompile Include="RenderTarget.cpp" />
     <ClCompile Include="ShadowMap.cpp" />
+    <ClCompile Include="AnimationController\AnimationController.cpp" />
+    <ClCompile Include="AnimationController\WalkAnimation.cpp" />
+    <ClCompile Include="AnimationController\IPlayerState.cpp" />
+    <ClCompile Include="AnimationController\IdleAnimation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="math\Vector.h">
@@ -220,10 +223,12 @@
     </ClInclude>
     <ClInclude Include="Player\PlayerMove.h" />
     <ClInclude Include="Player\PlayerTurn.h" />
-    <ClInclude Include="AnimationController.h" />
     <ClInclude Include="RenderTarget.h" />
     <ClInclude Include="ShadowMap.h" />
-    <ClInclude Include="IPlayerState.h" />
+    <ClInclude Include="AnimationController\AnimationController.h" />
+    <ClInclude Include="AnimationController\WalkAnimation.h" />
+    <ClInclude Include="AnimationController\IPlayerState.h" />
+    <ClInclude Include="AnimationController\IdleAnimation.h" />
   </ItemGroup>
   <ItemGroup>
     <MeshContentTask Include="Assets\modelData\unityChan.fbx">
