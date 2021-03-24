@@ -2,8 +2,7 @@
 #include "graphics/animation/Animation.h"
 #include "graphics/animation/AnimationClip.h"
 
-//#include "IPlayerState.h"
-//#include "WalkAnimation.h"
+
 enum animNum {
 	animidle,
 	animwalk,
@@ -29,10 +28,6 @@ private:
 	bool m_isMove = false; //移動フラグ
 	bool m_isrun = false; //走りフラグ
 	bool m_isJump = false; //ジャンプフラグ
-//private:
-//	template<class T> void ChangeState();
-private:
-	//IPlayerState* currentState;	//現在のステート。
 };
 
 

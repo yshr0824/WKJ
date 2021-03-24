@@ -34,21 +34,10 @@ bool AnimationController::Start()
 	);
 
 
-	//delete currentState;
 
 	return true;
 }
 
-//template<class T>inline void AnimationController::ChangeState()
-//{
-//	////待機状態に切り替え。
-//	//if (currentState != nullptr) {
-//	//	//現在のステートを破棄する。
-//	//	delete currentState;
-//	//}
-//	////次の状態のインスタンスを作成する。
-//	//currentState = new T;
-//}
 
 void AnimationController::Update()
 {
@@ -64,9 +53,9 @@ void AnimationController::Update()
 			if (m_isJump == false) {
 
 				if (m_isrun == false) {
-					m_animation.Play(animwalk, 0.3f);
+					m_animation.Play(animwalk, 0.3f);		//walkアニメーション
 				}
-				if (g_pad->IsPress(enButtonX)) {
+				if (g_pad->IsPress(enButtonX)) {			//runアニメーション
 					m_isrun = true;
 					if (m_isrun == true)
 					{
@@ -81,24 +70,24 @@ void AnimationController::Update()
 		m_isMove = false;
 	}
 	
-	if (fabsf(g_pad->GetLStickXF()) < 0.001f && fabsf(g_pad->GetLStickYF()) < 0.001f)
+	/*if (fabsf(g_pad->GetLStickXF()) < 0.001f && fabsf(g_pad->GetLStickYF()) < 0.001f)
 	{
-		if (m_isJump == false) {
 			m_animation.Play(animidle, 0.3f);
-		}
-		
 	}
-	
-	if (g_pad->IsPress(enButtonA)) {
+	else if (m_isJump == false && m_animation.IsPlaying() == false) {
+		m_animation.Play(animidle, 0.3f);
+	}*/
+	//上方向に力がかかっていてかつ、地面にいない　→ジャンプと落下のアニメーションがいる。
+	if (g_pad->IsTrigger(enButtonA) ) {
 		m_isJump = true;
 		if (m_isJump == true) {
 			m_animation.Play(animjump, 0.3f);
 
 		}
-	}
-	else {
 		m_isJump = false;
 	}
+		
+	
 	
 	
 
