@@ -6,6 +6,8 @@
 #include "PlayerMove.h"
 #include "PlayerTurn.h"
 #include "AnimationController/AnimationController.h"
+#include "AnimationController/IdleAnimation.h"
+
 class Asiba;
 //class PlayerMove;
 class Player: public IGameObject
@@ -67,6 +69,7 @@ private:
 	PlayerMove m_move;									//移動処理。
 	PlayerTurn m_playerturn;							//旋回処理。
 	AnimationController* m_animation = nullptr;
+	IdleAnimation* m_idleAnim = nullptr;
 	//CharacterController m_charaCon;						//キャラコン。
 	int renderMode = 1;	//０なら通常描画、１ならシルエット描画。
 	int renderMode2 = 0;

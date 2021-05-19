@@ -20,6 +20,10 @@ bool Player::Start()
 {	
 	m_animation = NewGO<AnimationController>(enGameObjectPrio_Middle, "animation");
 	m_animation->SetModel(m_model);
+
+	m_idleAnim = NewGO<IdleAnimation>(enGameObjectPrio_Middle, "idle");
+	m_idleAnim->SetIdelModel(m_model);
+
 	m_position = m_move.GetMovePos();
 	m_moveSpeed = m_move.GetMoveSp();
 	m_rotation = m_playerturn.GetTurnRot();
